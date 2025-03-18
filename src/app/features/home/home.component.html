@@ -1,0 +1,5 @@
+<p>home works!</p>
+<button (click)="gestoreLibri.recuperaLibri()">Ricerca</button>
+@for(libro of gestoreLibri.listaLibri(); track libro.title){
+  <p>{{libro.title}}</p>
+}
