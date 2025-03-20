@@ -1,5 +1,11 @@
-<p>home works!</p>
-<button (click)="gestoreLibri.recuperaLibri()">Ricerca</button>
-@for(libro of gestoreLibri.listaLibri(); track libro.title){
-  <p>{{libro.title}}</p>
-}
+<!-- home.component.html -->
+<h1>RICERCA LIBRO</h1>
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="query"
+    placeholder="Cerca un libro..."
+    class="search-input" />
+  <button (click)="searchBooks()" class="search-button">Cerca</button>
+  <p>{{query}}</p>
+</div>

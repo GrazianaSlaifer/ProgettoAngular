@@ -1,3 +1,9 @@
+// Questo codice descrive come sono organizzate le informazioni che ricevi quando cerchi libri online.
+// Immagina che tu faccia una ricerca su un sito di libri: il sito ti risponde con una lista di libri,
+// e questo codice dice come saranno strutturati i dettagli di ogni libro (titolo, autore, anno di pubblicazione, ecc.).
+
+
+
 export interface RichiestaLibri {
     numFound: number
     start: number

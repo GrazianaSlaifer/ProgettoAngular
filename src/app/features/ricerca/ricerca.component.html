@@ -1,1 +1,9 @@
-<p>ricerca works!</p>
+<p>RISULTATO RICERCA:</p>
+@for (book of books; track book.key) {
+<div (click)="stampaLibro(book)">
+  <p>{{book.title}}</p>
+  <p>{{book.author_name}}</p>
+  <hr>
+</div>
+
+}
