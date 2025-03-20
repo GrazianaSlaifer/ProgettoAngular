@@ -1,83 +1,84 @@
-// home.component.scss
-
-// Variabili di colore
-$primary-color: #4CAF50;
-$secondary-color: #f4f4f4;
-$button-color: #007bff;
-$button-hover-color: #0056b3;
+// Variabili per colori e tipografia
+$primary-color: #007bff;
+$secondary-color: #f8f9fa;
 $text-color: #333;
-$border-radius: 8px;
-$shadow-color: rgba(0, 0, 0, 0.1);
+$button-hover-color: #0056b3;
+$border-color: #e0e0e0;
+$font-family: 'Arial', sans-serif;
 
-// Reset di base
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #f9f9f9;
-  color: $text-color;
-  padding: 20px;
-}
-
-.results-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
+// Stile per il container principale
+p {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: $primary-color;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-// Contenitore libro
-.book-item {
+// Stile per ogni libro (contenitore)
+div {
+  background-color: $secondary-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  // Aggiungi effetto al passaggio del mouse
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  // Aggiungi flexbox per centrare gli elementi e allineare il bottone
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: $border-radius;
-  box-shadow: 0 4px 10px $shadow-color;
-  margin-bottom: 20px;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  align-items: center;
 
-  &:hover {
-    transform: translateY(-5px); // Leggero sollevamento al passaggio del mouse
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  // Allineamento del testo all'interno del div
+  p {
+    margin: 10px 0;
+    color: $text-color;
+    font-family: $font-family;
+    text-align: center;  // Centrare il testo
   }
 
-  .book-title {
-    font-size: 1.6rem;
+  // Stile per il titolo del libro
+  p:first-child {
+    font-size: 1.2rem;
     font-weight: bold;
     color: $primary-color;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
   }
 
-  .book-author {
-    font-size: 1.2rem;
-    color: $text-color;
-    margin-bottom: 12px;
-    font-weight: 300;
+  // Stile per l'autore
+  p:nth-child(2) {
+    font-size: 1rem;
+    color: #555;
   }
 
-  .details-button {
-    align-self: flex-start;
-    background-color: $button-color;
+  // Stile per il pulsante
+  button {
+    background-color: $primary-color;
     color: white;
     border: none;
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;  // Distanza tra il testo e il bottone
 
     &:hover {
       background-color: $button-hover-color;
-      transform: scale(1.05); // Leggera animazione di ingrandimento
     }
+  }
+
+  // Separatore
+  hr {
+    border: 0;
+    border-top: 1px solid $border-color;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;  // Impostato per estendersi su tutta la larghezza
   }
 }

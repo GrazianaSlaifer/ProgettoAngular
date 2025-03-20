@@ -1,0 +1,85 @@
+// Variabili per colori e tipografia
+$primary-color: #007bff; // Azzurro
+$secondary-color: #f8f9fa; // Grigio chiaro
+$text-color: #333; // Nero per il testo
+$button-hover-color: #0056b3; // Blu scuro per il bottone
+$border-color: #e0e0e0; // Colore per il bordo del separatore
+$font-family: 'Arial', sans-serif;
+
+// Stile per il container principale
+p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+// Stile per il titolo "DETTAGLI" in azzurro
+p:first-of-type {
+  color: $primary-color;
+}
+
+// Stile per la sezione dei dettagli
+section {
+  background-color: $secondary-color;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  // Aggiungi effetto al passaggio del mouse
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  // Flexbox per centrare il contenuto in verticale
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Stile per il titolo del libro (DETTAGLI)
+  p:first-of-type {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: 15px;
+  }
+
+  // Stile per l'autore
+  p:nth-of-type(2),
+  p:nth-of-type(3) {
+    font-size: 1.2rem;
+    color: $text-color; // Nero
+    margin-bottom: 10px;
+  }
+
+  // Sezione separata per le informazioni del libro
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  // Pulsante per tornare o altre azioni
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
+}
