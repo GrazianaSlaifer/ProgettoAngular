@@ -1,17 +1,5 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-ricerca',
-//   imports: [],
-//   templateUrl: './ricerca.component.html',
-//   styleUrl: './ricerca.component.scss'
-// })
-// export class RicercaComponent {
-
-// }
-
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'; // Per ottenere la query dalla URL
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router'; // Per ottenere la query dalla URL
 import { Libro } from '../../core/model/libro.model';
 import { GestoreLibriService } from '../../core/services/gestore-libri.service';
 
@@ -23,6 +11,7 @@ import { GestoreLibriService } from '../../core/services/gestore-libri.service';
 export class RicercaComponent implements OnInit {
   query: string = ''; // Query di ricerca dalla URL
   books: Libro[] = []; // Lista di libri trovati
+  router=inject(Router);
 
   constructor(
     private route: ActivatedRoute,
@@ -43,5 +32,8 @@ export class RicercaComponent implements OnInit {
   }
   stampaLibro(libro: Libro) {
     console.log(libro);
+  }
+  mostraDettagli(libro: Libro) {
+    this.router.navigate(['/dettaglio'], { queryParams: { query: JSON.stringify(libro) } });
   }
 }

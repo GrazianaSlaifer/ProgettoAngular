@@ -33,17 +33,25 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RichiestaLibri } from './../model/libro.model';
+import { Libro, RichiestaLibri } from './../model/libro.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GestoreLibriService {
   http = inject(HttpClient);
+  listaLibri: Partial<Libro>[]=[];
 
   // Metodo per cercare i libri in base al titolo
   recuperaLibriByTitle(title: string): Observable<RichiestaLibri> {
     const url = `https://openlibrary.org/search.json?title=${encodeURIComponent(title)}`;
     return this.http.get<RichiestaLibri>(url);
   }
+
+creaLibro(libro: Partial<Libro>) {
+  this.listaLibri.push(libro);
 }
+
+}
+
+

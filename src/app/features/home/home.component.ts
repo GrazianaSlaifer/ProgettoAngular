@@ -1,12 +1,8 @@
-// Questo componente è la parte principale della home page dell'app.
-// Quando viene chiamato il metodo "test", il componente chiede al servizio "GestoreLibriService" di recuperare e gestire la lista dei libri.
-// In altre parole, il componente interagisce con il servizio per ottenere i dati dei libri e usarli nell'interfaccia utente.
-
-
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router'; // Per la navigazione
-import { GestoreLibriService } from '../../core/services/gestore-libri.service';
-import { FormsModule, NgModel } from '@angular/forms';
+import { GestoreLibriService } from '../../core/services/gestore-libri.service'; // (Se necessario per la ricerca)
+import { FormsModule } from '@angular/forms'; // Per utilizzare ngModel
+import { Libro } from '../../core/model/libro.model';
 
 @Component({
   selector: 'app-home',
@@ -16,15 +12,41 @@ import { FormsModule, NgModel } from '@angular/forms';
 })
 export class HomeComponent {
   gestoreLibri = inject(GestoreLibriService);
-  query: string = '';  // Variabile per il titolo del libro da cercare
+  query: string = ''; // Variabile per la ricerca del titolo del libro
+  queryTitolo: string = ''; // Variabile per il titolo
+  queryAutore: string = ''; // Variabile per l'autore
+  queryCodice: string = ''; // Variabile per il codice del libro
 
   constructor(private router: Router) { }
 
-  // Metodo che viene chiamato quando l'utente clicca sul pulsante "Cerca"
+  // Metodo per la ricerca dei libri
   searchBooks() {
     if (this.query.trim() !== '') {
-      // Reindirizza alla pagina di ricerca con la query
+      // Reindirizza alla pagina di ricerca con la query del libro
       this.router.navigate(['/ricerca'], { queryParams: { query: this.query } });
+    }
+  }
+
+  // Metodo per aggiungere un libro e passare i dati alla pagina dei dettagli
+  addBook() {
+    if (this.queryTitolo.trim() !== '' || this.queryAutore.trim() !== '' || this.queryCodice.trim() !== '') {
+      // Crea un oggetto Libro
+      const libro: Partial<Libro> = {
+        title: this.queryTitolo,
+        author_name: [this.queryAutore],
+        key: this.queryCodice
+      };
+
+      this.gestoreLibri.creaLibro(libro)
+
+      // Naviga verso la pagina dei dettagli passando l'oggetto libro come query
+      this.router.navigate(['/dettaglio'], {
+        queryParams: {
+          query: JSON.stringify(libro) // Passa l'oggetto come stringa JSON
+        }
+      });
+    } else {
+      alert('Per favore, compila almeno uno dei campi.');
     }
   }
 }
@@ -33,22 +55,4 @@ export class HomeComponent {
 
 
 
-
-
-// import { Component, inject } from '@angular/core';
-// import { GestoreLibriService } from '../../core/services/gestore-libri.service';
-
-// @Component({
-//   selector: 'app-home',
-//   imports: [],
-//   templateUrl: './home.component.html',
-//   styleUrl: './home.component.scss'
-// })
-// export class HomeComponent {
-// gestoreLibri=inject(GestoreLibriService)
-
-// test() {
-//   this.gestoreLibri.listaLibri()
-// }
-// }
 

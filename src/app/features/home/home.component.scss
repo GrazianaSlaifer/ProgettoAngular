@@ -1,0 +1,75 @@
+// home.component.scss
+
+// Variabili di colori
+$primary-color: #4CAF50;
+$secondary-color: #f4f4f4;
+$button-color: #007bff;
+$button-hover-color: #0056b3;
+$text-color: #333;
+$border-radius: 8px;
+
+// Reset di base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: $text-color;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: $primary-color;
+  margin-bottom: 30px;
+}
+
+// Contenitore di ricerca
+.search-container {
+  background-color: $secondary-color;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  .search-input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  .search-button {
+    background-color: $button-color;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: $text-color;
+  }
+}

@@ -1,0 +1,83 @@
+// home.component.scss
+
+// Variabili di colore
+$primary-color: #4CAF50;
+$secondary-color: #f4f4f4;
+$button-color: #007bff;
+$button-hover-color: #0056b3;
+$text-color: #333;
+$border-radius: 8px;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Reset di base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f9f9f9;
+  color: $text-color;
+  padding: 20px;
+}
+
+.results-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 40px;
+}
+
+// Contenitore libro
+.book-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 10px $shadow-color;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px); // Leggero sollevamento al passaggio del mouse
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .book-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+  }
+
+  .book-author {
+    font-size: 1.2rem;
+    color: $text-color;
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  .details-button {
+    align-self: flex-start;
+    background-color: $button-color;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: $button-hover-color;
+      transform: scale(1.05); // Leggera animazione di ingrandimento
+    }
+  }
+}

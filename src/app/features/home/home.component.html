@@ -9,3 +9,26 @@
   <button (click)="searchBooks()" class="search-button">Cerca</button>
   <p>{{query}}</p>
 </div>
+
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="queryTitolo"
+    placeholder="Titolo libro"
+    class="search-input" />
+
+    <input
+    type="text"
+    [(ngModel)]="queryAutore"
+    placeholder="Autore libro"
+    class="search-input" />
+
+    <input
+    type="text"
+    [(ngModel)]="queryCodice"
+    placeholder="Codice libro"
+    class="search-input" />
+
+  <button (click)="addBook()" class="search-button">Aggiungi</button>
+  <p>{{ queryTitolo }} {{ queryAutore }} {{ queryCodice }}</p>
+</div>
