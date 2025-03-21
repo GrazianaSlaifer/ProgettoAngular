@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Libro } from '../../core/model/libro.model'; // Assicurati che la classe Libro sia corretta
 
+
 @Component({
   selector: 'app-dettaglio',
   templateUrl: './dettaglio.component.html',

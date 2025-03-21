@@ -1,3 +1,4 @@
+import { WishlistComponent } from './features/wishlist/wishlist.component';
 import { Routes } from '@angular/router';
 import { DettaglioComponent } from './features/dettaglio/dettaglio.component';
 import { HomeComponent } from './features/home/home.component';
@@ -18,6 +19,11 @@ export const routes: Routes = [
     {
         path:"dettaglio",
         component: DettaglioComponent
+    },
+
+    {
+        path:"wishlist",
+        component: WishlistComponent
     },
 
     {

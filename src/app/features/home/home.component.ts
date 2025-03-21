@@ -49,6 +49,13 @@ export class HomeComponent {
       alert('Per favore, compila almeno uno dei campi.');
     }
   }
+
+  // Metodo per aggiungere un libro alla wishlist
+  addToWishlist(libro: Partial<Libro>) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]'); // Recupera la wishlist dal localStorage
+    wishlist.push(libro); // Aggiungi il libro alla wishlist
+    localStorage.setItem('wishlist', JSON.stringify(wishlist)); // Salva la wishlist aggiornata
+  }
 }
 
 
