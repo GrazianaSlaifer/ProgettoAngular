@@ -1,14 +1,14 @@
 // Variabili per colori e tipografia
-$primary-color: #007bff; // Azzurro
+$primary-color: #3b5998; // Azzurro
 $secondary-color: #f8f9fa; // Grigio chiaro
-$text-color: #333; // Nero per il testo
+$text-color: #333;
 $button-hover-color: #0056b3; // Blu scuro per il bottone
 $border-color: #e0e0e0; // Colore per il bordo del separatore
 $font-family: 'Arial', sans-serif;
 
 // Stile per il container principale
 p {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
@@ -50,20 +50,32 @@ section {
     margin-bottom: 15px;
   }
 
-  // Stile per l'autore
+  // Stile per gli altri paragrafi (titolo, autore, chiave)
   p:nth-of-type(2),
-  p:nth-of-type(3) {
-    font-size: 1.2rem;
-    color: $text-color; // Nero
+  p:nth-of-type(3),
+  p:nth-of-type(4) {
+    font-size: 1rem;
+    color: $text-color;
     margin-bottom: 10px;
   }
 
-  // Sezione separata per le informazioni del libro
+  // Sezione separata per le informazioni del libro e la copertina
   .info {
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    width: 100%;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+  }
+
+  // Finta immagine (simulazione della copertina del libro)
+  .book-cover {
+    width: 120px;
+    height: 180px;
+    background-color: #ccc; /* Colore di sfondo grigio per simulare la copertina */
+    border-radius: 5px;
+    margin-right: 20px;
+    /* Puoi aggiungere una texture o immagine di sfondo per simulare meglio la copertina */
   }
 
   // Pulsante per tornare o altre azioni
@@ -82,4 +94,6 @@ section {
       background-color: $button-hover-color;
     }
   }
+
+
 }

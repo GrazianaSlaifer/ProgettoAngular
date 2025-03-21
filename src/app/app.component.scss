@@ -1,8 +1,8 @@
 // Variabili per i colori principali
-$primary-color: #3b5998;
+$primary-color: #1e482e;
 $secondary-color: #8b9dc3;
 $accent-color: #ff6f61;
-$background-color: #f4f4f4;
+$background-color: #d1dfab;
 $text-color: #333;
 $nav-link-hover-color: $accent-color;
 
@@ -22,6 +22,8 @@ body {
   padding: 20px;
 }
 
+
+
 // Contenitore principale
 div {
   max-width: 1200px;
@@ -34,7 +36,7 @@ div {
 
 // Titolo principale
 h1 {
-  font-size: 2.5rem;
+  font-size: 5rem;
   color: $primary-color;
   margin-bottom: 30px;
   text-align: center;

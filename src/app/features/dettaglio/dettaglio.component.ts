@@ -21,4 +21,5 @@ export class DettaglioComponent implements OnInit {
       }
     });
   }
+
 }

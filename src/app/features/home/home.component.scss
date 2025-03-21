@@ -1,12 +1,14 @@
 // home.component.scss
 
 // Variabili di colori
-$primary-color: #4CAF50;
+$primary-color: #3b5998;
 $secondary-color: #f4f4f4;
 $button-color: #007bff;
 $button-hover-color: #0056b3;
 $text-color: #333;
 $border-radius: 8px;
+
+
 
 // Reset di base
 * {
@@ -21,6 +23,8 @@ body {
   color: $text-color;
   padding: 20px;
 }
+
+
 
 h1 {
   text-align: center;
