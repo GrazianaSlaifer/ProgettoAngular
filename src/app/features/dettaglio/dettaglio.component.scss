@@ -5,6 +5,9 @@ $text-color: #333;
 $button-hover-color: #0056b3; // Blu scuro per il bottone
 $border-color: #e0e0e0; // Colore per il bordo del separatore
 $font-family: 'Arial', sans-serif;
+$button-color: #007bff;
+$border-radius: 8px;
+
 
 // Stile per il container principale
 p {
@@ -94,6 +97,19 @@ section {
       background-color: $button-hover-color;
     }
   }
+}
 
+.aggiungi-wishlist {
+  background-color: $button-color;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
+  &:hover {
+    background-color: $button-hover-color;
+  }
 }
