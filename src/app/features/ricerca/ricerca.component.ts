@@ -30,6 +30,7 @@ export class RicercaComponent implements OnInit {
       }
     });
   }
+  
   stampaLibro(libro: Libro) {
     console.log(libro);
   }

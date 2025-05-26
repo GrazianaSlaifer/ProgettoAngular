@@ -1,2 +1,12 @@
 <p>WISHLIST</p>
 
+@for (book of wishlist; track book.key) {
+<div (click)="stampaLibro(book)">
+  <p>{{book.title}}</p>
+  <p>{{book.author_name}}</p>
+  <button (click)="mostraDettagli(book)">dettagli</button>
+  <hr>
+
+</div>
+
+}

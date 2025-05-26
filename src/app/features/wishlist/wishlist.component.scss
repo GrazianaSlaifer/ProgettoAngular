@@ -94,6 +94,72 @@ section {
       background-color: $button-hover-color;
     }
   }
-
-
 }
+
+div {
+  background-color: $secondary-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  // Aggiungi effetto al passaggio del mouse
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  // Aggiungi flexbox per centrare gli elementi e allineare il bottone
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Allineamento del testo all'interno del div
+  p {
+    margin: 10px 0;
+    color: $text-color;
+    font-family: $font-family;
+    text-align: center;  // Centrare il testo
+  }
+
+  // Stile per il titolo del libro
+  p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  // Stile per l'autore
+  p:nth-child(2) {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  // Stile per il pulsante
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;  // Distanza tra il testo e il bottone
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
+
+  // Separatore
+  hr {
+    border: 0;
+    border-top: 1px solid $border-color;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;  // Impostato per estendersi su tutta la larghezza
+  }
+}
+

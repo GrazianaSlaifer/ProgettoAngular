@@ -23,4 +23,14 @@ export class DettaglioComponent implements OnInit {
     });
   }
 
+  // Metodo per aggiungere un libro alla wishlist
+  addToWishlist() {
+    // this.libro
+    console.log(this.libro)
+    let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]'); // Recupera la wishlist dal localStorage
+    wishlist.push(this.libro); // Aggiungi il libro alla wishlist
+    localStorage.setItem('wishlist', JSON.stringify(wishlist)); // Salva la wishlist aggiornata
+
+    console.log(localStorage.getItem("wishlist"))
+  }
 }
